@@ -380,22 +380,36 @@ class PDFService {
    * @returns {Promise<Buffer>} - The PDF as a buffer
    */
   async generatePDF(questionPaper) {
+    let browser = null;
     try {
       const html = this.generateHTML(questionPaper);
       
-      // Launch a browser instance
-      const browser = await puppeteer.launch({
-        headless: 'new',
+      // Configure browser launch options for both local and production
+      const options = {
+        headless: true,
         args: ['--no-sandbox', '--disable-setuid-sandbox']
-      });
+      };
+      
+      // Set executable path based on environment
+      if (process.env.NODE_ENV === 'production') {
+        // Use system Chromium on Render
+        options.executablePath = '/usr/bin/chromium';
+        logger.info('Using Chromium at /usr/bin/chromium');
+      }
+      
+      logger.info('Launching browser with options:', JSON.stringify(options));
+      browser = await puppeteer.launch(options);
       
       // Create a new page
       const page = await browser.newPage();
+      logger.info('Browser page created');
       
       // Set content to our HTML
       await page.setContent(html, { waitUntil: 'networkidle0' });
+      logger.info('HTML content loaded');
       
       // Generate PDF as buffer instead of saving to file
+      logger.info('Generating PDF...');
       const pdfBuffer = await page.pdf({
         format: 'A4',
         printBackground: true,
@@ -407,13 +421,28 @@ class PDFService {
         }
       });
       
-      // Close the browser
-      await browser.close();
+      logger.info('PDF generated successfully in memory');
       
-      logger.info(`PDF generated successfully in memory`);
+      // Close the browser
+      if (browser) {
+        await browser.close();
+        logger.info('Browser closed');
+      }
+      
       return pdfBuffer;
     } catch (error) {
       logger.error('PDF generation error:', error);
+      
+      // Make sure to close browser on error
+      if (browser) {
+        try {
+          await browser.close();
+          logger.info('Browser closed after error');
+        } catch (closeError) {
+          logger.error('Error closing browser:', closeError);
+        }
+      }
+      
       throw new Error(`Failed to generate PDF: ${error.message}`);
     }
   }
