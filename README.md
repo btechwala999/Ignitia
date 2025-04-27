@@ -65,7 +65,7 @@ Each generated question includes:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/Ignitia.git
+git clone https://github.com/btechwala999/Ignitia.git
 ```
 
 2. Install dependencies for backend
