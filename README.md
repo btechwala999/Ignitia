@@ -53,7 +53,6 @@ Our breakthrough came when we pivoted from Puppeteer to PDFKit for document gene
 
 ## 📽️ Demo & Deliverables
 - Demo Video Link: https://youtu.be/qPKK-s5T000
-- 
 - Pitch Deck Link: https://docs.google.com/presentation/d/1xKHrXg7bAN2Ix-jfouW8hIhJ9oHXIMyz/edit?usp=drive_link&ouid=117876365010684076430&rtpof=true&sd=true
 
 ## 🧪 How to Run the Project
