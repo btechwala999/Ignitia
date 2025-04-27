@@ -1,0 +1,5 @@
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-26T23:03:56.946Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-26T23:03:56.954Z"}
+{"level":"error","message":"401 - User not found. Please register first. - /api/v1/auth/login - POST - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:30:55.168Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:31:08.441Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:31:08.451Z"}

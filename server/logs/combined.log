@@ -1,0 +1,33 @@
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T20:45:03.364Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T20:45:03.371Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T20:45:55.152Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T20:45:55.162Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T20:55:18.316Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T20:55:18.326Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T21:46:37.296Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T21:46:37.313Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T22:11:17.410Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T22:11:17.432Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T22:26:55.132Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T22:26:55.138Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T22:58:45.177Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T22:58:45.184Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T23:01:38.253Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T23:01:38.259Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T23:01:46.948Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T23:01:46.956Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T23:01:58.982Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T23:01:58.988Z"}
+{"level":"info","message":"PDF generated successfully in memory","service":"ignitia-api","timestamp":"2025-04-26T23:03:26.188Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-26T23:03:56.946Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-26T23:03:56.954Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-26T23:04:30.169Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-26T23:04:30.182Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-27T07:29:54.297Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-27T07:29:54.311Z"}
+{"level":"error","message":"401 - User not found. Please register first. - /api/v1/auth/login - POST - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:30:55.168Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:31:08.441Z"}
+{"level":"error","message":"401 - You are not logged in. Please log in to get access. - /api/v1/auth/me - GET - ::1","service":"ignitia-api","timestamp":"2025-04-27T07:31:08.451Z"}
+{"level":"info","message":"Connected to MongoDB","service":"ignitia-api","timestamp":"2025-04-27T08:40:11.199Z"}
+{"level":"info","message":"Server running on port 5000","service":"ignitia-api","timestamp":"2025-04-27T08:40:11.205Z"}
+{"level":"info","message":"PDF generated successfully in memory","service":"ignitia-api","timestamp":"2025-04-27T08:40:44.735Z"}
