@@ -384,18 +384,17 @@ class PDFService {
     try {
       const html = this.generateHTML(questionPaper);
       
-      // Configure browser launch options for both local and production
+      // Configure browser launch options with memory settings for Render
       const options = {
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--single-process'
+        ]
       };
-      
-      // Set executable path based on environment
-      if (process.env.NODE_ENV === 'production') {
-        // Use system Chromium on Render
-        options.executablePath = '/usr/bin/chromium';
-        logger.info('Using Chromium at /usr/bin/chromium');
-      }
       
       logger.info('Launching browser with options:', JSON.stringify(options));
       browser = await puppeteer.launch(options);
