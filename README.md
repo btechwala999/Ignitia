@@ -47,7 +47,7 @@ Each generated question includes:
 - MongoDB for database
 - JWT for authentication
 - Groq API for AI-powered features
-- Puppeteer for PDF generation
+- PDFKit for PDF generation (replacing Puppeteer)
 
 ### AI Integration
 - GroqCloud API with LLaMA 3 70B model
@@ -85,7 +85,7 @@ npm install
 ```
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb+srv://utkarshsinghus238:U6a91vR5T6kb7Iqm@question-paper-maker.ql2jcrx.mongodb.net/?retryWrites=true&w=majority&appName=question-paper-maker
+MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_here
 JWT_EXPIRES_IN=24h
 GROQ_API_KEY=your_groq_api_key_here
@@ -106,7 +106,6 @@ npm run dev
 eduiq/
 ├── client/                # Frontend React app
 │   ├── public/            # Static files
-│   ├── src/
 │   │   ├── api/           # API service layers
 │   │   ├── components/    # Reusable components
 │   │   ├── context/       # React contexts
@@ -137,11 +136,49 @@ eduiq/
 5. Questions are displayed to user for review
 6. User can save the generated questions as a question paper
 
+### PDF Generation System
+1. Custom PDF layout using PDFKit with absolute positioning for precise control
+2. Structured format with parts (A, B, C, D) for different question types:
+   - Part A: Multiple Choice Questions (MCQs)
+   - Part B: Short answer, diagram, and code questions
+   - Part C: Long answer questions
+   - Part D: Higher Order Thinking Skills (HOTS) questions
+3. Advanced layout features:
+   - Registration number boxes
+   - Examination header with class and year
+   - Subject/topic information
+   - Instruction notes
+   - Time and marks details
+   - Proper spacing and page breaks
+4. Mathematical symbol support through text processing
+5. Direct PDF buffer generation without browser dependencies
+
 ### Question Paper Management
 1. Question papers are stored in MongoDB with references to creators
-2. PDF export is handled by Puppeteer for high-quality documents
-3. Role-based permissions ensure only authorized users can manage papers
+2. Role-based permissions ensure only authorized users can manage papers
 
+## Deployment
+
+The application is configured for deployment on Render with the following features:
+- Direct PDF generation with PDFKit (no browser requirement)
+- Environment configuration in `render.yaml` for streamlined deployment
+- Optimized for performance in cloud environments
+
+## Recent Updates
+
+### PDF Generation Improvements
+- Transitioned from Puppeteer to PDFKit for more efficient PDF generation
+- Implemented absolute positioning for precise control of document layout
+- Fixed spacing issues between different parts of the question paper
+- Enhanced mathematical symbol support
+- Improved overall document structure and formatting
+- Consistent page breaks and spacing throughout the document
+
+### Dependency and Configuration Updates
+- Simplified dependency requirements
+- Reduced deployment complexity and resource usage
+- Streamlined development environment configuration
+- Improved render.yaml for production deployment
 
 ## License
 
@@ -150,5 +187,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgments
 
 - Groq for providing powerful AI capabilities
-- OpenAI for research and development in NLP
 - The open-source community for various tools and libraries 
