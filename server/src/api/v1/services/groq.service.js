@@ -5,12 +5,13 @@ const logger = require('../../../utils/logger');
 // Load environment variables
 dotenv.config();
 
-// Available Groq Models:
-// - llama3-70b-8192 (recommended for best quality)
-// - llama3-8b-8192 (faster, smaller model)
-// - mixtral-8x7b-32768 (good for longer contexts)
-// - gemma-7b-it (balanced performance)
-const DEFAULT_MODEL = 'llama3-70b-8192';
+// Available Groq Models (updated March 2026):
+// - openai/gpt-oss-120b (DEFAULT - best quality, 120B param GPT-class model)
+// - openai/gpt-oss-20b (lighter/faster variant)
+// - llama-3.3-70b-versatile (open source alternative)
+// - llama-3.1-8b-instant (fastest, lightweight)
+// NOTE: llama3-70b-8192, llama3-8b-8192, mixtral-8x7b-32768, gemma-7b-it are DECOMMISSIONED
+const DEFAULT_MODEL = 'openai/gpt-oss-120b';;
 
 // Initialize Groq API client with API key
 const apiKey = process.env.GROQ_API_KEY;
