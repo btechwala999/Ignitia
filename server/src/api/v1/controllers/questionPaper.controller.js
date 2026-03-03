@@ -23,14 +23,14 @@ exports.generateQuestions = async (req, res, next) => {
     // Log the request body to debug
     console.log('Generate questions request body:', JSON.stringify(req.body, null, 2));
 
-    const { 
-      topic, 
-      count = 5, 
-      difficulty = 'medium', 
-      type = 'mcq', 
-      bloomsLevel, 
+    const {
+      topic,
+      count = 5,
+      difficulty = 'medium',
+      type = 'mcq',
+      bloomsLevel,
       subject,
-      model = 'llama3-70b-8192',
+      model = 'openai/gpt-oss-120b',
       // Additional parameters
       questionTypes,
       description,
@@ -48,10 +48,10 @@ exports.generateQuestions = async (req, res, next) => {
         return (
           ['mcq', 'short', 'long', 'diagram', 'code', 'hots', 'case_study'].includes(item.type) &&
           ['easy', 'medium', 'hard'].includes(item.difficulty) &&
-          Number.isInteger(item.count) && 
-          item.count > 0 && 
+          Number.isInteger(item.count) &&
+          item.count > 0 &&
           item.count <= 25 &&
-          Number.isInteger(item.marks) && 
+          Number.isInteger(item.marks) &&
           item.marks > 0
         );
       });
@@ -70,7 +70,7 @@ exports.generateQuestions = async (req, res, next) => {
       const totalCount = questionDistribution && questionDistribution.length > 0
         ? questionDistribution.reduce((sum, item) => sum + item.count, 0)
         : count;
-        
+
       // Extract additional parameters to pass to the service
       const additionalParams = {
         questionTypes: questionTypes || [type],
@@ -105,7 +105,7 @@ exports.generateQuestions = async (req, res, next) => {
           if (!question.options || !Array.isArray(question.options)) {
             question.options = [
               "Option A",
-              "Option B", 
+              "Option B",
               "Option C",
               "Option D"
             ];
@@ -118,13 +118,13 @@ exports.generateQuestions = async (req, res, next) => {
             // Truncate if more than 4
             question.options = question.options.slice(0, 4);
           }
-          
+
           // Ensure correctAnswer is set and valid
           if (!question.correctAnswer || !question.options.includes(question.correctAnswer)) {
             question.correctAnswer = question.options[0];
           }
         }
-        
+
         return question;
       });
 
@@ -437,7 +437,7 @@ exports.exportQuestionPaper = async (req, res, next) => {
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename="question-paper-${questionPaper._id}.pdf"`);
     res.setHeader('Content-Length', pdfBuffer.length);
-    
+
     // Send the PDF buffer directly to the client
     res.send(pdfBuffer);
   } catch (error) {
@@ -460,7 +460,7 @@ exports.solveQuestion = async (req, res, next) => {
       });
     }
 
-    const { question, subject, model = 'llama3-70b-8192' } = req.body;
+    const { question, subject, model = 'openai/gpt-oss-120b' } = req.body;
 
     // Solve the question using groq service
     try {
@@ -516,7 +516,7 @@ exports.solveQuestionPaper = async (req, res, next) => {
       });
     }
 
-    const { questions, subject, model = 'llama3-70b-8192' } = req.body;
+    const { questions, subject, model = 'openai/gpt-oss-120b' } = req.body;
 
     // Get just the question texts if full objects were provided
     const questionTexts = questions.map(q => typeof q === 'string' ? q : q.text);
