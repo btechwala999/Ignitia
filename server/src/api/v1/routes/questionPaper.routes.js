@@ -105,7 +105,7 @@ router.post(
     body('subject').optional().isString().withMessage('Subject must be a string'),
     body('model')
       .optional()
-      .isIn(['llama3-70b-8192', 'llama3-8b-8192', 'mixtral-8x7b-32768', 'gemma-7b-it'])
+      .isIn(['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'meta-llama/llama-4-scout-17b-16e-instruct', 'meta-llama/llama-4-maverick-17b-128e-instruct'])
       .withMessage('Model must be a valid Groq model'),
   ],
   questionPaperController.solveQuestion
@@ -119,7 +119,7 @@ router.post(
     body('subject').optional().isString().withMessage('Subject must be a string'),
     body('model')
       .optional()
-      .isIn(['llama3-70b-8192', 'llama3-8b-8192', 'mixtral-8x7b-32768', 'gemma-7b-it'])
+      .isIn(['openai/gpt-oss-120b', 'openai/gpt-oss-20b', 'llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'meta-llama/llama-4-scout-17b-16e-instruct', 'meta-llama/llama-4-maverick-17b-128e-instruct'])
       .withMessage('Model must be a valid Groq model'),
   ],
   questionPaperController.solveQuestionPaper
